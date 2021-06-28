@@ -1,20 +1,34 @@
+// we need a MemoryGame class,
+// we need a method to shuffle cards,
+// we need a method to compare cards, and
+// we need a method to check if the game is finished.
+
 class MemoryGame {
   constructor(cards) {
     this.cards = cards;
-    // add the rest of the class properties here
+    //     // storing the cards player clicks
+    this.pickedCards = [];
+    this.pairsClicked = 0;
+    this.pairsGuessed = 0;
   }
 
   shuffleCards() {
-    // ... write your code here
+    // https://bost.ocks.org/mike/shuffle/
   }
 
   checkIfPair(card1, card2) {
-    // ... write your code here
+    this.pairsClicked += 1;
+
+    if (card1 === card2) {
+      this.pairsGuessed += 1;
+      this.checkIfFinished();
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  checkIfFinished() {
-    // ... write your code here
-  }
+  checkIfFinished() {}
 }
 
 // The following is required for automated testing. Please, ignore it.
