@@ -16,6 +16,12 @@ class MemoryGame {
     // https://bost.ocks.org/mike/shuffle/
   }
 
+  // when user chooses cards, check if they are the same
+  // will receive 2 parameters: cards chosen by player
+  // The method will add 1 to our pairsClicked property
+  //  if the cards are the same also add 1 to pairsGuessed
+  // return true or false depending on the result of comparing both cards
+  // add checkIfFinished() method
   checkIfPair(card1, card2) {
     this.pairsClicked += 1;
 
@@ -27,7 +33,7 @@ class MemoryGame {
       return false;
     }
   }
-
+  // return this.pairsGuessed === something === /2
   checkIfFinished() {}
 }
 
